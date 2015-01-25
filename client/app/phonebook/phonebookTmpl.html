@@ -1,0 +1,72 @@
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Phonebook Form</legend>
+<form class="form-horizontal" name="form" ng-submit="savePhonebook(form)" novalidate>
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                        'has-error': form.name.$invalid && submitted }">
+  <label class="col-sm-2 form-label" for="name">Name</label>
+  <div class="controls">
+    <input id="name" name="name" type="text" placeholder="" class="col-sm-10 input-large" required="" ng-model="name"
+             required/>
+      <p class="help-block" ng-show="form.name.$error.required && submitted">
+        Name is required
+      </p>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group"  ng-class="{ 'has-success': form.email.$valid && submitted,
+                                        'has-error': form.email.$invalid && submitted }">
+  <label class="col-sm-2 form-label" for="email">Email</label>
+  <div class="controls">
+    <input id="email" name="email" type="text" placeholder="" class="col-sm-10 input-large" required="" ng-model="email"
+             required
+             mongoose-error/>
+      <p class="help-block" ng-show="form.email.$error.email && submitted">
+        Doesn't look like a valid email.
+      </p>
+       <p class="help-block" ng-show="form.email.$error.required && submitted">
+        What's the email address?
+      </p>
+      <p class="help-block" ng-show="form.email.$error.mongoose">
+        {{ errors.email }}
+      </p>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group" ng-class="{ 'has-success': form.phone.$valid && submitted,
+                                        'has-error': form.phone.$invalid && submitted }">
+  <label class="col-sm-2 form-label" for="phone">Phone</label>
+  <div class="controls">
+    <input id="phone" name="phone" type="text" placeholder="" class="col-sm-10 input-large" required="" ng-model="phone">
+    <p class="help-block" ng-show="form.name.$error.required && submitted">
+        Phone is required
+    </p>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-2 form-label" for="tanggal">Notes</label>
+  <div class="controls">
+    <input id="notes" name="notes" type="text" placeholder="" class="col-sm-10 input-large" required="" ng-model="notes">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <label class="col-sm-2 control-label" for="save"></label>
+  <div class="controls">
+    <button id="save" name="save" class="btn btn-success" ng-click="savePhonebook(form)">Save</button>
+    <button id="cancel" name="cancel" class="btn btn-success" ng-click="cancel()">Cancel</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
