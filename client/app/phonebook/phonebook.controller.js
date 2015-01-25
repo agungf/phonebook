@@ -19,7 +19,8 @@ angular.module('phonebookApp')
             dtId = loadedDT.id;
     });
 
-    $scope.newPbToggle = false;    
+    $scope.newPbToggle = false; //default edit/add form hided
+
     $scope.newPhonebook = function () {
       $scope.user = {};
       $scope.submitted = false;
@@ -32,8 +33,11 @@ angular.module('phonebookApp')
       $scope.action = 'Update';
       $scope.newPbToggle = true;          
     };    
+
+    // form submit action
     $scope.newPbSubmit = function(form) {
       $scope.submitted = true;      
+      // form is valid and actionis update
       if(form.$valid && $scope.action === 'Update') { //update user
         Auth.changePhonebook(          
           $scope.user._id,
@@ -83,7 +87,7 @@ angular.module('phonebookApp')
     };
     $scope.removePhonebook = function (user) {
         ngDialog.open({ 
-            template: 'app/admin/delConfirmTmpl.html',
+            template: 'app/phonebook/delConfirmTmpl.html',
             className: 'ngdialog-theme-default',
             scope: $scope,
             controller: ['$scope', 'User', function($scope, User) {

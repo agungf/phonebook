@@ -105,7 +105,7 @@ angular.module('phonebookApp')
 
         return User.save(user,
           function(data) {
-            $cookieStore.put('token', data.token);
+            //$cookieStore.put('token', data.token);
             //currentUser = User.get();
             return cb(user);
           },
