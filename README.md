@@ -11,11 +11,10 @@ Another Phonebook sharing apps
 ## The  stack
 
 - Angular js frontend framework with modules loaded: bootstrap, font-awesome, lodash, datatables, ngDialog, moment 
-- Mongo database using mongoose
-- Nodejs Express framework
-- Yeoman Bower Grunt developemnt environment
-- Fig Docker runtime on Azure cloud
-
+- Mongo database persistent data layer using mongoose
+- Nodejs Express backend framework
+- Yeoman Bower Grunt developemnt environment automation
+- Docker container isolated environment deployed with Fig on Azure cloud
 
 ## Features
 
@@ -46,12 +45,12 @@ Another Phonebook sharing apps
 ## Custom rules / Beta release limitation
 
 - Run on developemnt mode
-- 'Demo' user can't be deleted
+- 'Dem	o' user can't be deleted
 - Only admin can manage the phonebook
 - Users register or logging using Facebook ot twitter account can not manage the phonebook
  
 
 ## Todo
 
--  run on production mode wich is minified and optimized documents ans assets
- 
+-  run on production mode which is minified and optimized documents and assets
+	 
